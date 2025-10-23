@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+{% endblock head %}
+{% block menu %}
+  <li><a href="{% url 'landing:home' %}">Accueil</a></li>
+  <li><a href="{% url 'landing:enterprise_list' %}">Entreprises membres</a></li>
+  <li><a href="{% url 'landing:home' %}#advantages">Avantages</a></li>
+  <li><a href="{% url 'landing:home' %}#marketplace">Marketplace</a></li>
+  <li><a href="{% url 'landing:home' %}#join">Rejoindre</a></li>
+{% endblock menu %}
+
+
+
+{% block content %}
+    <section class="py-8 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <div class="flex items-center justify-center">
+                    <img class="rounded-lg bg-white dark:bg-base-100 shadow-xl w-full h-auto object-cover max-h-[600px]"
+                         src="{% if enterprise.image_logo %}{{ enterprise.image_logo.url }}{% else %}{% static 'images/logo_gray.png' %}{% endif %}"
+                         alt="Two business colleagues looking at a smartphone in a modern office.">
+                </div>
+                <div class="relative">
+                    <div class="hidden sm:block absolute top-0 -left-4 w-10 h-10 bg-purple-100 rounded-full mix-blend-multiply filter blur-sm opacity-70 animate-blob"></div>
+                    <div class="hidden sm:block absolute top-1/2 -right-4 w-12 h-12 bg-purple-100 rounded-full mix-blend-multiply filter blur-sm opacity-70 animate-blob animation-delay-2000"></div>
+                    <div class="hidden sm:block absolute bottom-8 left-20 w-14 h-14 bg-purple-100 rounded-full mix-blend-multiply filter blur-sm opacity-70 animate-blob animation-delay-4000"></div>
+
+                    <div class="relative">
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+                            {{ enterprise.name }}
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-600">
+                            {{ enterprise.description }}
+                        </p>
+                        <div class="mt-4 space-y-8">
+                            <div class="p-4">
+                                <h3 class="mt-2 text-lg font-semibold">Nos coordonnées</h3>
+                                <div class="mt-1 text-base text-gray-500 dark:text-gray-300 py-2">
+                                    <div class="pt-2">
+                                        <div class="flex gap-1">
+                                            <div class="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M120-120v-560h160v-160h400v320h160v400H520v-160h-80v160H120Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Z"/></svg>
+                                            </div>
+                                            <div class="">{{ enterprise.address }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-2">
+                                        <div class="flex gap-1">
+                                            <div class="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
+                                            </div>
+                                            <div class="">{{ enterprise.email }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-2">
+                                         <div class="flex gap-1">
+                                            <div class="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg>
+                                            </div>
+                                            <div class="">{{ enterprise.phone }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-4xl mx-auto px-5 lg:mt-16 mb-16">
+        <div class="text-center">
+            <h2 class="font-semibold text-3xl">Nos services</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10 mt-10">
+
+            {% for service in enterprise.services.all %}
+            <div class="flex gap-4 items-start border border-gray-200 rounded-lg p-2 flex-col">
+                <span class="bg-white flex justify-center items-center text-teal-600 text-center font-extrabold bg-orange-100 border border-gray-200 h-12 w-12 rounded-full">
+                    {{ forloop.counter }}
+                </span>
+                <div>
+                    <h3 class="font-semibold text-xl">{{ service.name }}</h3>
+                    <p class="mt-1 text-gray-500">{{ service.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% if enterprise.latitude and enterprise.longitude %}
+    <div class="relative w-full w-94 h-94 rounded-2xl overflow-hidden mb-8 shadow-xl">
+      <div id="map" class="absolute inset-0"></div>
+    </div>
+    {% endif %}
+{% endblock content %}
+
+{% block script %}
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+      const latitude = {{ enterprise.latitude }};
+      const longitude = {{ enterprise.longitude }};
+
+      var map = L.map('map').setView([latitude, longitude], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
+        subdomains: ['a', 'b', 'c'],
+        maxZoom: 19
+      }).addTo(map);
+
+      L.marker([latitude, longitude]).addTo(map)
+        .bindPopup("{{ enterprise.name }}")
+        .openPopup();
+    </script>
+
+{% endblock script %}

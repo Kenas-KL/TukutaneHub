@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+{% endblock head %}
+{% block menu %}
+  <li><a href="{% url 'landing:home' %}">Accueil</a></li>
+  <li><a href="{% url 'landing:enterprise_list' %}">Entreprises membres</a></li>
+  <li><a href="{% url 'landing:home' %}#advantages">Avantages</a></li>
+  <li><a href="{% url 'landing:home' %}#marketplace">Marketplace</a></li>
+{% endblock menu %}
+{% block content %}
+  <section class="flex justify-center items-center rounded-lg">
+    <div class="flex w-auto flex-col gap-5 p-3 bg-base-100 rounded-lg shadow md:w-2/3">
+      <div class="text-teal-600 flex justify-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" height="54px" viewBox="0 -960 960 960" width="54px" fill="currentColor"><path d="M160-720v-80h640v80H160Zm0 560v-240h-40v-80l40-200h640l40 200v80h-40v240h-80v-240H560v240H160Zm80-80h240v-160H240v160Zm-38-240h556-556Zm0 0h556l-24-120H226l-24 120Z"/></svg>      </div>
+      <h2 class="text-3xl font-bold text-center text-orange-600">Tukutane <span class="text-teal-600">Store</span></h2>
+      <img src="{% static 'images/store.png' %}" class="w-auto h-auto rounded-full" alt="">
+      <div class="text-xl text-gray-500 text-center">Nous construisons une Marketplace à la hauteur de vos ambitions. La plateforme est actuellement en développement pour garantir la meilleure visibilité aux entrepreneurs. Notre équipe travaille d'arrache-pied pour finaliser le réseau et la collection inaugurale. Lancement très bientôt !</div>
+      <a href="{% url 'landing:home' %}" class="p-4 bg-teal-600 text-white text-center mt-8 font-bold rounded-xl">Retour à l'accueil</a>
+    </div>
+  </section>
+<!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
+
+{% endblock content %}

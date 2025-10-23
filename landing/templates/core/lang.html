@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+{% load tailwind_tags %}
+{% load static %}
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% tailwind_css %}
+    <title>Entrepreneurial Circle</title>
+  {% comment %}
+<!--    {% load livereload_tags %}-->
+<!--    {% livereload_script %}-->{% endcomment %}
+  {% block style %}
+
+  {% endblock style%}
+</head>
+<body class="bg-gray-50">
+    <div class="navbar shadow-sm sticky top-0 z-50 backdrop-blur-xs">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-20 mt-3 w-52 p-2 shadow">
+            <li><a href="#advantages">Avantages</a></li>
+            <li><a href="#marketplace">Marketplace</a></li>
+            <li><a href="#join">Rejoindre</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-center">
+        <a href="{% url 'landing:home' %}" class="bg-linear-to-r from-orange-500 to-teal-700 bg-clip-text text-2xl text-transparent font-extrabold">
+        Entrepreneurs Circle
+        </a>
+      </div>
+      <div class="navbar-end">
+        <button class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"/></svg>
+        </button>
+      </div>
+    </div>
+    <section class="relative min-h-screen">
+      <div class="absolute rounded-2xl inset-0 bg-radial-[at_5%_5%] from-orange-600 to-teal-600 to-75% blur-3xl bg-cover bg-center bg-fixed"
+      style="background-image: url('{% static "images/hero.jpeg" %}');"
+      ></div>
+      <div class="relative w-screen inset-0 z-1 p-2 flex justify-center">
+        {% block content %}
+
+        {% endblock content %}
+      </div>
+    </section>
+
+    <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
+      <nav>
+        <h6 class="footer-title text-orange-500">Services</h6>
+        <a class="link link-hover hover:text-teal-600">Branding</a>
+        <a class="link link-hover hover:text-teal-600">Design</a>
+        <a class="link link-hover hover:text-teal-600">Marketing</a>
+        <a class="link link-hover hover:text-teal-600">Advertisement</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title text-orange-500">Company</h6>
+        <a class="link link-hover hover:text-teal-600">About us</a>
+        <a class="link link-hover hover:text-teal-600">Contact</a>
+        <a class="link link-hover hover:text-teal-600">Jobs</a>
+        <a class="link link-hover hover:text-teal-600">Press kit</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title text-orange-500">Legal</h6>
+        <a class="link link-hover hover:text-teal-600">Terms of use</a>
+        <a class="link link-hover hover:text-teal-600">Privacy policy</a>
+        <a class="link link-hover hover:text-teal-600">Cookie policy</a>
+      </nav>
+    </footer>
+    <footer class="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
+      <aside class="grid-flow-col items-center">
+        <img src="{% static 'images/logo.png' %}" alt="" class="h-24 w-24">
+        <p>
+          <span class="text-orange-500 font-blod text-2xl">Entrepreneurs</span>
+          <br>
+          <span class="text-teal-600 text-2xl">Circle</span>
+        </p>
+      </aside>
+      <nav class="md:place-self-center md:justify-self-end">
+        <div class="grid grid-flow-col gap-4">
+          <a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current">
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+            </svg>
+          </a>
+          <a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current">
+              <path
+                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+            </svg>
+          </a>
+          <a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current">
+              <path
+                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </footer>
+{% block script %}{% endblock %}
+</body>
+</html>

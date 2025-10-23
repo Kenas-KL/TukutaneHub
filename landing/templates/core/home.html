@@ -1,0 +1,261 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <style>
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    </style>
+
+{% endblock head %}
+{% block menu %}
+  <li><a href="{% url 'landing:home' %}#advantages">Avantages</a></li>
+  <li><a href="{% url 'landing:home' %}#marketplace">Marketplace</a></li>
+  <li><a href="{% url 'landing:home' %}#join">Rejoindre</a></li>
+{% endblock menu %}
+{% block content %}
+    <section class="flex flex-col rounded-2xl gap-2 mx-auto md:w-full ">
+        <div class="hidden sm:mb-8 sm:flex sm:justify-center ">
+            <div class="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              Les entreprises qui sont avec nous. <a href="{% url 'landing:enterprise_list' %}" class="font-semibold text-teal-600"><span aria-hidden="true" class="absolute inset-0"></span>Entreprises<span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+          <div class="text-center">
+            <h1 class="text-4xl font-semibold tracking-tight text-balance text-teal-600 sm:text-3xl">Bâtissons l'Avenir de l'Entrepreneuriat Ensemble.</h1>
+            <p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
+              Rejoignez un réseau exclusif d'innovateurs, de créateurs et de leaders pour grandir, collaborer et réussir.
+            </p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+              <a href="#join" class="rounded-md bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-orange-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Devenir Membre</a>
+              <a href="{% url 'landing:enterprise_list' %}" class="text-sm/6 font-semibold text-teal-600">Entreprises membres<span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        <section id="advantages" class="text-gray-600 body-font flex flex-col p-2 justify-center items-center mx-3 ">
+          <div class="container px-5 mt-24 mx-auto">
+            <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+              <h1 class="sm:text-3xl text-3xl dark:text-gray-100 title-font font-bold text-gray-900">Pourquoi nous rejoindre ?</h1>
+            </div>
+          </div>
+            <div class="flex flex-wrap -m-4">
+              <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-200 p-6 rounded-lg">
+                  <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-teal-100 text-orange-600 mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M557-518 387-688l57-56 113 113 227-226 56 56-283 283ZM320-220l278 76 238-74q-5-9-14.5-15.5T800-240H598q-27 0-43-2t-33-8l-93-31 22-78 81 27q17 5 40 8t68 4q0-11-6.5-21T618-354l-234-86h-64v220ZM80-80v-440h304q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87v40L600-60l-280-78v58H80Zm80-80h80v-280h-80v280Z"/></svg>
+                  </div>
+                  <h2 class="text-lg text-gray-900 dark:text-gray-100 font-medium title-font mb-2">Accès anticipé à la communauté</h2>
+                </div>
+              </div>
+              <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-200 p-6 rounded-lg">
+                  <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-teal-100 text-orange-600 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M323-160q-11 0-20.5-5.5T288-181l-78-139h58l40 80h92v-40h-68l-40-80H188l-57-100q-2-5-3.5-10t-1.5-10q0-4 5-20l57-100h104l40-80h68v-40h-92l-40 80h-58l78-139q5-10 14.5-15.5T323-800h97q17 0 28.5 11.5T460-760v160h-60l-40 40h100v120h-88l-40-80h-92l-40 40h108l40 80h112v200q0 17-11.5 28.5T420-160h-97Zm237 0q-33 0-56.5-23.5T480-240q0-23 11-40.5t29-28.5v-342q-18-11-29-28.5T480-720q0-33 23.5-56.5T560-800q33 0 56.5 23.5T640-720q0 23-11 40.5T600-651v101l80-48q0-34 23.5-58t56.5-24q33 0 56.5 23.5T840-600q0 33-23.5 56.5T760-520q-11 0-20.5-2.5T721-530l-91 55 101 80q7-3 14-4t15-1q33 0 56.5 23.5T840-320q0 33-23.5 56.5T760-240q-37 0-60.5-28T681-332l-81-65v89q18 11 28.5 28.5T639-240q0 33-23 56.5T560-160Z"/></svg>
+                  </div>
+                  <h2 class="text-lg text-gray-900 dark:text-gray-100 font-medium title-font mb-2">Réseau Stratégique</h2>
+                  <p class="leading-relaxed text-base">Connectez-vous avec les esprits les plus brillants d'une manière exclusive.</p>
+                </div>
+              </div>
+              <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-200 p-6 rounded-lg">
+                  <div class="w-10 h-10 inline-flex items-center justify-center rounded-full rounded-full bg-teal-100 text-orange-600 mb-4">
+                    <span class="text-">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M40-160v-160q0-34 23.5-57t56.5-23h131q20 0 38 10t29 27q29 39 71.5 61t90.5 22q49 0 91.5-22t70.5-61q13-17 30.5-27t36.5-10h131q34 0 57 23t23 57v160H640v-91q-35 25-75.5 38T480-200q-43 0-84-13.5T320-252v92H40Zm440-160q-38 0-72-17.5T351-386q-17-25-42.5-39.5T253-440q22-37 93-58.5T480-520q63 0 134 21.5t93 58.5q-29 0-55 14.5T609-386q-22 32-56 49t-73 17ZM160-440q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T280-560q0 50-34.5 85T160-440Zm640 0q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T920-560q0 50-34.5 85T800-440ZM480-560q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-680q0 50-34.5 85T480-560Z"/></svg>
+                    </span>
+                  </div>
+                  <h2 class="text-lg text-gray-900 dark:text-gray-100 font-medium title-font mb-2">Partage de Compétences</h2>
+                  <p class="leading-relaxed text-base">Apprenez des autres et partagez votre propre expertise lors de nos ateliers.</p>
+                </div>
+              </div>
+              <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-200 p-6 rounded-lg">
+                  <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-teal-100 text-orange-600 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M160-80v-240h120v240H160Zm200 0v-476q-50 17-65 62.5T280-400h-80q0-128 75-204t205-76q100 0 150-49.5T680-880h80q0 88-37.5 157.5T600-624v544h-80v-240h-80v240h-80Zm120-640q-33 0-56.5-23.5T400-800q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800q0 33-23.5 56.5T480-720Z"/></svg>
+                  </div>
+                  <h2 class="text-lg text-gray-900 dark:text-gray-100 font-medium title-font mb-2">Accès aux Opportunités</h2>
+                  <p class="leading-relaxed text-base">Soyez le premier informé des nouveaux projets, financements et collaborations.</p>
+                </div>
+              </div>
+              <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-200 p-6 rounded-lg">
+                  <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-teal-100 text-orange-600 mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+                  </div>
+                  <h2 class="text-lg text-gray-900 dark:text-gray-100 font-medium title-font mb-2">Votre Visibilité</h2>
+                  <p class="leading-relaxed text-base">Visibilité à l'echelle du digital pour votre entreprise et vos services.</p>
+                </div>
+              </div>
+              <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-200 p-6 rounded-lg">
+                  <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-teal-100 text-orange-600 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M200-80q-33 0-56.5-23.5T120-160v-480q0-33 23.5-56.5T200-720h80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720h80q33 0 56.5 23.5T840-640v480q0 33-23.5 56.5T760-80H200Zm0-80h560v-480H200v480Zm280-240q83 0 141.5-58.5T680-600h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85h-80q0 83 58.5 141.5T480-400ZM360-720h240q0-50-35-85t-85-35q-50 0-85 35t-35 85ZM200-160v-480 480Z"/></svg>
+                  </div>
+                  <h2 class="text-lg text-gray-900 dark:text-gray-100 font-medium title-font mb-2">Votre Future Boutique</h2>
+                  <p class="leading-relaxed text-base">Préparez-vous à vendre vos services sur notre future plateforme communautaire.</p>
+                </div>
+              </div>
+            </div>
+        </section>
+        <section id="marketplace" class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="text-left">
+                    <h2 class="text-3xl font-bold mb-4">Bientôt : La Marketplace des Entrepreneurs</h2>
+                    <p class="text-gray-600 leading-7 mb-6">
+                        Nous construisons une plateforme exclusive pour que nos membres puissent offrir leurs services directement aux clients. Créez votre profil, listez vos services et développez votre activité comme jamais auparavant.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-teal-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span><span class="font-semibold">Profil Professionnel Personnalisé</span> pour mettre en valeur votre marque.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-teal-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span><span class="font-semibold">Des services professionnels</span> dans tous les secteurs.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-teal-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span><span class="font-semibold">Gestion de Services et Tarifs</span> simple et intuitive.</span>
+                        </li>
+                        <li class="flex items-start">
+                             <svg class="w-6 h-6 text-teal-600 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span><span class="font-semibold">Prise de Contact Directe Client</span> pour maximiser vos revenus.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-10 lg:mt-0">
+                    <img src="{% static 'images/hub.png' %}" alt="Marketplace user interface mockup" class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </section>
+       <section id="members" class="py-16 sm:py-24 overflow-hidden max-w-screen">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+              Nos Entreprises Membres
+            </h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+              Découvrez les entreprises qui font partie du <span class="text-teal-600 font-semibold">Cercle des Entrepreneurs</span> :
+              des acteurs issus de divers secteurs, unis par la passion de l’innovation et du progrès.
+            </p>
+            <section class="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
+              <div id="carousel" class="relative">
+                <div class="carousel-track flex w-full" style="transform: translateX(0%);">
+                  {% for enterprise in enterprises %}
+                  <figure class="w-full flex-shrink-0 relative">
+                    <img src="{% if enterprise.image_logo %}{{ enterprise.image_logo.url }}{% else %}{% static 'images/logo_gray.png' %}{% endif %}" alt="" class="w-full h-72 object-cover sm:h-96"/>
+                    <figcaption class="absolute inset-0 flex items-end bg-gradient-to-t from-black/50 to-transparent p-6">
+                      <a href="{% url 'landing:enterprise_detail' slug=enterprise.slug %}" class="text-white">
+                        <h2 class="text-2xl sm:text-3xl font-semibold">{{ enterprise.name }}</h2>
+                        {% if enterprise.description %}
+                          <p class="mt-1 text-sm sm:text-base opacity-90">
+                              {{ enterprise.description|truncatewords:7 }}
+                          </p>
+                        {% endif %}
+                      </a>
+                    </figcaption>
+                  </figure>
+                    {% endfor %}
+                </div>
+                <button id="prev" aria-label="Précédent" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm hover:bg-white text-gray-800 rounded-full p-2 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button id="next" aria-label="Suivant" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm hover:bg-white text-gray-800 rounded-full p-2 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </section>
+          </div>
+        </section>
+         <section id="join" class="border-gray-50 py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold">Prêt à nous rejoindre ?</h2>
+                <p class="mt-4 text-gray-600 max-w-xl mx-auto">Remplissez le formulaire. Notre équipe examinera votre candidature et vous contactera dans les plus brefs délais.</p>
+                <form action="" method="POST" class="mt-8 max-w-xl mx-auto flex flex-col gap-4">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Votre Nom Complet" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <input type="text" name="name_enterprise" placeholder="Nom de votre entreprise" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <input type="email" name="email" placeholder="Votre Adresse E-mail" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <input type="tel" name="phone" placeholder="Numéro WhatsApp" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <button type="submit" class="w-full rounded-3xl bg-gradient-to-r from-teal-600 via-gray-500 to-orange-500 text-gray-300 font-bold py-3 px-8 text-lg hover:bg-blue-700 transition-colors">
+                        Soumettre ma Candidature
+                    </button>
+                </form>
+            </div>
+        </section>
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center bg-base-200 rounded-2xl p-3">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="oklch(70.5% 0.213 47.604)" class="inline-block w-8 h-8 text-gray-400 mb-8" viewBox="0 0 975.036 975.036">
+                    <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+                </svg>
+                <p class="leading-relaxed text-lg">
+                    La meilleure façon de prédire l'avenir, c'est de le créer.
+                </p>
+                <span class="inline-block h-1 w-10 rounded bg-teal-600 mt-8 mb-6"></span>
+                <h2 class="text-orange-500 font-medium title-font tracking-wider text-sm">— Peter Drucker</h2>
+                <p class="text-gray-500">Gourou du management moderne</p>
+                </div>
+            </div>
+        </section>
+    </section>
+{% endblock content %}
+
+{% block script %}
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".carousel-track");
+  const slides = Array.from(track.children);
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+  const indicators = Array.from(document.querySelectorAll(".indicator"));
+
+  let current = 0;
+  let autoplayId = null;
+  const autoplayDelay = 4000; // 4 secondes
+
+  function goTo(index) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    updateIndicators(index);
+    current = index;
+  }
+
+  function updateIndicators(index) {
+    indicators.forEach((btn, i) => {
+      btn.classList.toggle("bg-white/60", i === index);
+      btn.classList.toggle("bg-white/40", i !== index);
+    });
+  }
+
+  // autoplay
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayId = setInterval(() => goTo(current + 1), autoplayDelay);
+  }
+  function stopAutoplay() {
+    if (autoplayId) clearInterval(autoplayId);
+  }
+  function resetAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  // boutons
+  prevBtn.addEventListener("click", () => { goTo(current - 1); resetAutoplay(); });
+  nextBtn.addEventListener("click", () => { goTo(current + 1); resetAutoplay(); });
+
+  // indicateurs
+  indicators.forEach(btn => btn.addEventListener("click", e => {
+    goTo(Number(e.currentTarget.dataset.index));
+    resetAutoplay();
+  }));
+
+  // init
+  goTo(0);
+  startAutoplay();
+});
+</script>
+{% endblock script %}
